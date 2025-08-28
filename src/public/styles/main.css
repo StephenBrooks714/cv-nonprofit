@@ -1,0 +1,277 @@
+@charset "UTF-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+.navigation {
+  height: 70px;
+  background: linear-gradient(to bottom, rgba(244, 244, 244, 0.8), rgba(0, 158.1, 183.6, 0.8));
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.navigation .nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.navigation .brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.navigation .brand:hover {
+  cursor: pointer;
+}
+.navigation .brand a,
+.navigation .brand a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+.navigation nav {
+  float: right;
+}
+.navigation nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation nav ul li {
+  float: left;
+  position: relative;
+}
+.navigation nav ul li a {
+  display: block;
+  padding: 8px 18px 0 18px;
+  line-height: 50px;
+  background: inherit;
+  color: #fff;
+  text-decoration: none;
+}
+.navigation nav ul li a::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #d3bba1;
+  width: 0%;
+  bottom: 0px;
+}
+.navigation nav ul li a:hover::before {
+  width: 70%;
+}
+.navigation nav ul li a:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+.navigation nav ul li ul li {
+  min-width: 190px;
+}
+.navigation nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+.navigation .nav-dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  padding: 5px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 158.1, 183.6, 0.8));
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: white !important;
+}
+.navigation .nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: inherit;
+  height: 70px;
+  width: 70px;
+}
+@media only screen and (max-width: 992px) {
+  .navigation .nav-mobile {
+    display: block;
+  }
+  .navigation nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  .navigation nav ul {
+    display: none;
+    height: auto;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(141, 16, 81, 0.8));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .navigation nav ul li {
+    float: none;
+  }
+  .navigation nav ul li a {
+    padding: 15px;
+    line-height: 18px;
+  }
+  .navigation nav ul li a:hover::before {
+    width: 20%;
+  }
+  .navigation nav ul li a.btn-brown {
+    background-color: #d3bba1 !important;
+    color: #fff !important;
+    margin-top: 3px;
+    max-width: 75px;
+    text-decoration: none;
+    padding: 15px;
+    line-height: 18px;
+    margin-left: 12px;
+  }
+  .navigation nav ul li a.btn-brown:hover::before {
+    width: 0%;
+  }
+  .navigation nav ul li ul li a {
+    padding-left: 30px;
+  }
+  .navigation .nav-dropdown {
+    position: static;
+  }
+}
+.navigation #nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+.navigation #nav-toggle span,
+.navigation #nav-toggle span:before,
+.navigation #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #d3bba1;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+.navigation #nav-toggle span:before {
+  top: -10px;
+}
+.navigation #nav-toggle span:after {
+  bottom: -10px;
+}
+.navigation #nav-toggle.active span {
+  background-color: transparent;
+}
+.navigation #nav-toggle.active span:before, .navigation #nav-toggle.active span:after {
+  top: 0;
+}
+.navigation #nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+.navigation #nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+@media screen and (min-width: 992px) {
+  .navigation .nav-list {
+    display: block !important;
+  }
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 270px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+@media (max-width: 992xp) {
+  .flip-card {
+    height: 375px;
+    width: 80%;
+  }
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100, "YTLC" 500;
+}
+
+.intro {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(141, 16, 81, 0.3)), url("../assets/group-healing.png"), no-repeat center center fixed;
+  background-size: cover;
+  height: 70vh;
+}
+
+.intro-bg {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(141, 16, 81, 0.3)), url("https://static.vecteezy.com/system/resources/previews/011/437/196/large_2x/person-hike-friends-helping-each-other-up-a-mountain-man-and-woman-giving-a-helping-hand-and-active-fit-lifestyle-asia-couple-hiking-help-each-other-concept-of-friendship-teamwork-photo.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 70vh;
+}
+
+.purple-text {
+  color: #8d1051;
+}
+
+.purple-bg {
+  background-color: #8d1051;
+}
+
+.teal-bg {
+  background-color: #A68CA1;
+}
+
+/*# sourceMappingURL=main.css.map */

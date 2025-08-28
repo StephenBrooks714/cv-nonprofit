@@ -1,0 +1,49 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "navigation.scss";
+@import "cards.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+          "wdth" 100,
+          "YTLC" 500;
+}
+
+// home intro
+.intro {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(141, 16, 81, 0.3)),
+  url("../assets/group-healing.png"),
+  no-repeat center center fixed;
+  background-size: cover;
+  height: 70vh;
+}
+.intro-bg {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(141, 16, 81, 0.3)),
+  url("https://static.vecteezy.com/system/resources/previews/011/437/196/large_2x/person-hike-friends-helping-each-other-up-a-mountain-man-and-woman-giving-a-helping-hand-and-active-fit-lifestyle-asia-couple-hiking-help-each-other-concept-of-friendship-teamwork-photo.jpg")
+  no-repeat center center fixed;
+  background-size: cover;
+  height: 70vh;
+}
+.purple-text {
+  color: #8d1051;
+}
+
+.purple-bg {
+  background-color: #8d1051;
+}
+
+.teal-bg {
+  background-color: #A68CA1;
+}

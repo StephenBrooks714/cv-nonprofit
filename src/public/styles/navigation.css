@@ -1,0 +1,182 @@
+@charset "UTF-8";
+.navigation {
+  height: 70px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(141, 16, 81, 0.8));
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.navigation .nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.navigation .brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+.navigation .brand:hover {
+  cursor: pointer;
+}
+.navigation .brand a,
+.navigation .brand a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+.navigation nav {
+  float: right;
+}
+.navigation nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navigation nav ul li {
+  float: left;
+  position: relative;
+}
+.navigation nav ul li a {
+  display: block;
+  padding: 8px 18px 0 18px;
+  line-height: 50px;
+  background: inherit;
+  color: #fff;
+  text-decoration: none;
+}
+.navigation nav ul li a::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #d3bba1;
+  width: 0%;
+  bottom: 0px;
+}
+.navigation nav ul li a:hover::before {
+  width: 70%;
+}
+.navigation nav ul li a:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+.navigation nav ul li ul li {
+  min-width: 190px;
+}
+.navigation nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+.navigation .nav-dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  padding: 5px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(141, 16, 81, 0.8));
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.navigation .nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: inherit;
+  height: 70px;
+  width: 70px;
+}
+@media only screen and (max-width: 992px) {
+  .navigation .nav-mobile {
+    display: block;
+  }
+  .navigation nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  .navigation nav ul {
+    display: none;
+    height: auto;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(141, 16, 81, 0.8));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .navigation nav ul li {
+    float: none;
+  }
+  .navigation nav ul li a {
+    padding: 15px;
+    line-height: 18px;
+  }
+  .navigation nav ul li a:hover::before {
+    width: 20%;
+  }
+  .navigation nav ul li a.btn-brown {
+    background-color: #d3bba1 !important;
+    color: #fff !important;
+    margin-top: 3px;
+    max-width: 75px;
+    text-decoration: none;
+    padding: 15px;
+    line-height: 18px;
+    margin-left: 12px;
+  }
+  .navigation nav ul li a.btn-brown:hover::before {
+    width: 0%;
+  }
+  .navigation nav ul li ul li a {
+    padding-left: 30px;
+  }
+  .navigation .nav-dropdown {
+    position: static;
+  }
+}
+.navigation #nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+.navigation #nav-toggle span,
+.navigation #nav-toggle span:before,
+.navigation #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #d3bba1;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+.navigation #nav-toggle span:before {
+  top: -10px;
+}
+.navigation #nav-toggle span:after {
+  bottom: -10px;
+}
+.navigation #nav-toggle.active span {
+  background-color: transparent;
+}
+.navigation #nav-toggle.active span:before, .navigation #nav-toggle.active span:after {
+  top: 0;
+}
+.navigation #nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+.navigation #nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+@media screen and (min-width: 992px) {
+  .navigation .nav-list {
+    display: block !important;
+  }
+}
+
+/*# sourceMappingURL=navigation.css.map */
