@@ -5,6 +5,17 @@
                 <a href="/">
                     <img src="/assets/logo.png" style="height:60px!important; width:55px!important;" alt="logo" />
                 </a>
+                <% if(!loggedIn) { %>
+                    <a href="/login" class="mt-5">
+                        <i class="fas fa-right-to-bracket" data-mdb-tooltip-init data-mdb-placement="bottom" title="Login"></i>
+                    </a>
+                <% } else { %>
+<!--                    <i class="fas fa-user-gear"></i>-->
+                    <a href="/logout" class="mt-5">
+                        <i class="fas fa-right-from-bracket" data-mdb-tooltip-init data-mdb-placement="bottom" title="Logout"></i>
+                    </a>
+                    <!-- Dropdown -->
+                <% } %>
             </div>
             <nav>
                 <div class="nav-mobile">
@@ -30,7 +41,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#!">Get Involved</a>
+                        <a href="#!">Involvement</a>
                         <ul class="nav-dropdown">
                             <li><a href="#!">Link Text</a></li>
                             <li><a href="#!">Link Text</a></li>
@@ -38,8 +49,15 @@
                             <li><a href="#!">Link Text</a></li>
                         </ul>
                     </li>
-                    <li><a href="#!">Donate</a></li>
-
+                    <% if(loggedIn) { %>
+                        <li>
+                            <a href="/dashboard">
+                                <i class="fas fa-user-gear" data-mdb-tooltip-init data-mdb-placement="bottom" title="Admin Menu"></i>
+                            </a>
+                        </li>
+                    <% } else { %>
+                        <li><a href="#!">Donate</a></li>
+                    <% } %>
                 </ul>
             </nav>
         </div>
