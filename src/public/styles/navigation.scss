@@ -2,7 +2,7 @@ $content-width: 1000px;
 $breakpoint: 992px;
 $nav-height: 70px;
 $nav-font-color: #fff;
-$link-hover-color: #d3bba1;
+$link-hover-color: #ffffff;
 $navbar-bg-color: #A68CA1;
 
 // navbar
@@ -60,7 +60,7 @@ $navbar-bg-color: #A68CA1;
             height: 5px;
             content: "";
             position: absolute;
-            background-color: $link-hover-color;
+            background-color: #FFFFFF;
             width: 0%;
             bottom: 0px;
           }
@@ -118,7 +118,7 @@ $navbar-bg-color: #A68CA1;
       ul {
         display: none;
         height: auto;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(141, 16, 81, 0.8));
+        background: linear-gradient(to bottom, rgba(244, 244, 244, 0.8), rgba(0%, 62%, 72%, 0.8));
         box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
