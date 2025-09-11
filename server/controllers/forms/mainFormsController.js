@@ -17,12 +17,28 @@ const deleteBoardMember = async (req, res) => {
     res.redirect("/boardMembers");
 }
 
+const updateBoardMemberPage = async (req, res) => {
+    const boardMember = await boardMemberData.findById(req.params.id);
+    res.render("updateBoardMember", {
+        title: "Update Board Member",
+        boardMember
+    })
+}
 
-
-
+const postUpdateBoardMember = async (req, res) => {
+    const boardMember = await boardMemberData.findById(req.params.id);
+    boardMember.name = req.body.name;
+    boardMember.role = req.body.role;
+    boardMember.description = req.body.description;
+    boardMember.image = req.body.image;
+    await boardMember.save();
+    res.redirect("/boardMembers");
+}
 
 module.exports = {
     newBoardMemberPage,
     storeBoardMember,
-    deleteBoardMember
+    deleteBoardMember,
+    updateBoardMemberPage,
+    postUpdateBoardMember
 }

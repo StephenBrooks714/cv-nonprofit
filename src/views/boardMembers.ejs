@@ -38,7 +38,12 @@
                                 <p><%= members[i].role %></p>
                                 <p><%= members[i].description %></p>
                                 <% if(loggedIn) { %>
-                                    <a href="/deleteBoardMember/<%= members[i]._id %>" class="btn btn-warning">delete</a>
+                                    <a href="/deleteBoardMember/<%= members[i]._id %>" class="btn me-2 btn-warning">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                    <a href="/updateBoardMember/<%= members[i]._id %>" class="btn btn-warning">
+                                        <i class="fas fa-pen"></i>
+                                    </a>
                                 <% } %>
                             </div>
                         </div>
