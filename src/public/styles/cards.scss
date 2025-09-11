@@ -8,6 +8,10 @@
     height: 375px;
     width: 80%;
   }
+  @media(max-width: 862xp) {
+    height: 445px!important;
+    width: 80%;
+  }
 }
 
 /* This container is needed to position the front and back side */
@@ -32,12 +36,29 @@
   height: 100%;
   -webkit-backface-visibility: hidden; /* Safari */
   backface-visibility: hidden;
+  @media(max-width: 992xp) {
+    height: 375px;
+    width: 80%;
+  }
+  @media(max-width: 862xp) {
+    height: 445px!important;
+    width: 80%;
+  }
 }
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
   background-color: #bbb;
   color: black;
+
+  @media(max-width: 992xp) {
+    height: 375px;
+    width: 80%;
+  }
+  @media(max-width: 862xp) {
+    height: 445px!important;
+    width: 80%;
+  }
 }
 
 /* Style the back side */

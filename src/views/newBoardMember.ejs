@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<%- include("layouts/header") -%>
+<body>
+
+<header class="mb-10">
+    <%- include("layouts/navbar") -%>
+</header>
+
+<main>
+    <!-- elements here -->
+    <div class="container mb-7">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1>Add New Board Member</h1>
+                <form action="/store/boardMember" method="post" enctype="multipart/form-data">
+                    <div data-mdb-input-init class="form-outline mb-3">
+                        <input type="text" name="name" class="form-control" placeholder="Name">
+                        <label for="name" class="form-label">Their Name</label>
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-3">
+                        <input type="text" name="role" class="form-control" placeholder="role">
+                        <label for="role" class="form-label">Their Role</label>
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-3">
+                        <input type="url" name="image" class="form-control">
+                        <label for="image" class="form-label">Image Link</label>
+                    </div>
+                    <div data-mdb-input-init class="form-outline mb-3">
+                        <textarea name="description" id="description" class="form-control" rows="3"></textarea>
+                        <label for="description" class="form-label">Description</label>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">upload member</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Section: Design Block-->
+</main>
+<!-- Footer -->
+<%- include("layouts/footer") -%>
+</body>
+</html>

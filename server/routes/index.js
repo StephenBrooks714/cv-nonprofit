@@ -21,4 +21,9 @@ router.get("/deleteUser/:id", cache(2), auth, userActionController.deleteUser);
 const adminController = require("../controllers/controls/adminPageController");
 router.get("/dashboard", cache(2), auth, adminController.adminPage);
 
+const formsController = require("../controllers/forms/mainFormsController");
+router.get("/newBoardMember", auth, cache(2), auth, formsController.newBoardMemberPage);
+router.post("/store/boardMember", cache(2), auth, formsController.storeBoardMember);
+router.get("/deleteBoardMember/:id", auth, cache(2), auth, formsController.deleteBoardMember);
+
 module.exports = router;
