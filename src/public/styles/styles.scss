@@ -1,0 +1,15 @@
+.max-image-size {
+  height: 345px;
+  width: 100%;
+  max-height: 345px;
+  @media(max-width: 992px) {
+    height: 100%;
+    width: 100%;
+    max-height: 385px;
+  }
+  @media(max-width: 862px) {
+    height: 100%;
+    width: 100%;
+    max-height: 437px;
+  }
+}
