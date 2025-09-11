@@ -36,21 +36,32 @@
                                 <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="#!">
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <input type="text" required name="name" id="name" class="form-control" />
-                                        <label class="form-label" for="name">Your Name</label>
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <input type="email" required name="email" id="form2Example1" class="form-control" />
-                                        <label class="form-label" for="form2Example1">Email address</label>
-                                    </div>
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <textarea class="form-control" required name="message" id="form5Example3" rows="4"></textarea>
-                                        <label class="form-label" for="form5Example3">Message</label>
-                                    </div>
-                                    <button type="submit" class="btn btn-dark btn-block">Send</button>
-                                </form>
+                                <% if(contactData != "") { %>
+                                    <p class="fw-bold h1 mb-1 text-success">Contact Us</p>
+                                    <form action="/send/form"
+                                          method="POST"
+                                          enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" required name="name" id="name" placeholder="Name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="text" class="form-control" required name="phones" id="phones" placeholder="phone#">
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="email" class="form-control" required name="from" id="email" placeholder="Email">
+                                        </div>
+                                        <div class="mb-3">
+                                            <textarea class="form-control" required id="message" name="message" rows="3" placeholder="Message"></textarea>
+                                        </div>
+                                        <div id="message"></div>
+                                        <button data-mdb-ripple-init type="submit" class="btn btn-outline-success mb-4">Send Your Message</button>
+                                    </form>
+                                <% } else { %>
+                                    <p class="lead">
+                                        Contact us by one of the contact methods provided. We will have a contact form available as soon as we get it assigned to a contactable person.
+                                        Thank you for visiting our website, please don't hesitate to reach out.
+                                    </p>
+                                <% } %>
                                 <p class="lead mt-3">
                                     1234 Main St - Some City, NJ 12345
                                     <br>

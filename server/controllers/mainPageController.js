@@ -1,11 +1,14 @@
 // data bases
 const boardMemberInfo = require("../models/OurBoard");
+const ContactMethod = require("../models/ContactForm");
 //////////////////////////////////////////////////////
 
 // main pages
-const homePage = (req, res) => {
+const homePage = async (req, res) => {
+    const contactData = await ContactMethod.find({}).sort({ createdAt: -1 }).limit(1);
     res.render("index", {
-        title: "Nonprofit business - Cosmic Vibes"
+        title: "Nonprofit business - Cosmic Vibes",
+        contactData
     })
 }
 

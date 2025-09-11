@@ -28,4 +28,11 @@ router.get("/deleteBoardMember/:id", auth, cache(2), auth, formsController.delet
 router.get("/updateBoardMember/:id", auth, cache(2), auth, formsController.updateBoardMemberPage);
 router.post("/updateBoardMember/:id", auth, cache(2), auth, formsController.postUpdateBoardMember);
 
+const contactFormController = require("../controllers/forms/contactPreferences");
+router.get("/newContact", auth, contactFormController.newContactPage);
+router.post("/store/contact", auth, contactFormController.storeContact);
+router.post("/send/form", contactFormController.sendForm);
+router.get("/deleteContactPreference/:id", auth, contactFormController.deleteContactPreference);
+router.get("/thankYou", contactFormController.thankYouPage);
+
 module.exports = router;
