@@ -69,7 +69,7 @@ const sendForm = async (req, res) => {
 
 const deleteContactPreference = async (req, res) => {
     await ContactFormDB.findByIdAndDelete(req.params.id)
-    res.redirect('/dashbboard')
+    res.redirect('/dashboard')
 }
 
 const thankYouPage = (req, res) => {

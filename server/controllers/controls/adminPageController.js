@@ -1,8 +1,11 @@
 // data
+const contactPerson = require("../../models/ContactForm");
 
-const adminPage = (req, res) => {
+const adminPage = async (req, res) => {
+    const contactData = await contactPerson.find({}).sort({ _id: -1 }).limit(1);
     res.render("dashboard", {
-        title: "Admin page for content"
+        title: "Admin page for content",
+        contactData
     })
 }
 
