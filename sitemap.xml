@@ -7,9 +7,15 @@
     <loc>http://localhost:8080/login</loc>
   </url>
   <url>
+    <loc>http://localhost:8080/ourReach</loc>
+  </url>
+  <url>
     <loc>http://localhost:8080/boardMembers</loc>
   </url>
   <url>
-    <loc>http://localhost:8080/ourReach</loc>
+    <loc>http://localhost:8080/testimonials</loc>
+  </url>
+  <url>
+    <loc>http://localhost:8080/events</loc>
   </url>
 </urlset>

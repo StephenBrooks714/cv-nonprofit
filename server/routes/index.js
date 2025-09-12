@@ -4,9 +4,11 @@ const cache = require("../config/cache");
 const auth = require("../middleware/ifAuthorized");
 
 const mainController = require("../controllers/mainPageController");
-router.get("/", mainController.homePage);
-router.get("/boardMembers", mainController.boardMembersPage);
-router.get("/ourReach", mainController.ourReachPage);
+router.get("/", cache(2), mainController.homePage);
+router.get("/boardMembers", cache(2), mainController.boardMembersPage);
+router.get("/ourReach", cache(2), mainController.ourReachPage);
+router.get("/testimonials", cache(2), mainController.testimonialsPage);
+router.get("/events", cache(2), mainController.eventsPage);
 
 const userActionController = require("../controllers/users/index");
 router.get("/register", auth, cache(2), userActionController.registerUser);

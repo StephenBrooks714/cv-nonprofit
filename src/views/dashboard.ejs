@@ -29,17 +29,17 @@
                                                 <a href="">Update Main Intro</a>
                                             </li>
                                             <li>
-                                                <a href="">Update Sponsors</a>
+                                                <a href="">Update FAQ Section</a>
                                             </li>
                                             <li>
                                                 <% if(contactData != "") { %>
                                                     <% for(i=0; i < contactData.length; i++) { %>
                                                         <p class="text-muted">
-                                                            Set person receiving main contact form is: <%= contactData[i].adminName %>, using email <%= contactData[i].email %>. <a class="text-warning" href="/deleteContactPreference/<%= contactData[i]._id %>"><i class="fa-solid fa-trash"></i></a>
+                                                            Form Submissions Go To: <%= contactData[i].adminName %>, using email <%= contactData[i].email %>. <a class="text-warning" href="/deleteContactPreference/<%= contactData[i]._id %>"><i class="fa-solid fa-trash"></i></a>
                                                         </p>
                                                     <% } %>
                                                 <% } else { %>
-                                                    <p class="text-muted">No one set to receive contact <a href="/newContact" class="text-decoration-underline">form submissions</a>.</p>
+                                                    <p class="text-muted">Add a <a href="/newContact" class="text-decoration-underline">form contact</a>.</p>
                                                 <% } %>
                                             </li>
                                         </ul>
