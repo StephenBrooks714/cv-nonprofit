@@ -1,0 +1,85 @@
+<div class="row mb-6">
+    <div class="col-lg-7 mb-lg-0 mb-4">
+        <h2 class="fw-bold text-black display-5 mb-3">Our Service To You</h2>
+        <p class="lead mb-3">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate deleniti hic, inventore mollitia perspiciatis quasi saepe similique tempora temporibus totam vel. At blanditiis dicta earum inventore laudantium. Corporis, numquam?
+        </p>
+        <button type="button" class="btn btn-dark" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+            Get In Touch
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
+                        <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <% if(contactData != "") { %>
+                            <p class="fw-bold h1 mb-1 text-success">Contact Us</p>
+                            <form action="/send/form"
+                                  method="POST"
+                                  enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" required name="name" id="name" placeholder="Name">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" required name="phones" id="phones" placeholder="phone#">
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" required name="from" id="email" placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" required id="message" name="message" rows="3" placeholder="Message"></textarea>
+                                </div>
+                                <div id="message"></div>
+                                <button data-mdb-ripple-init type="submit" class="btn btn-outline-success mb-4">Send Your Message</button>
+                            </form>
+                        <% } else { %>
+                            <p class="lead">
+                                Contact us by one of the contact methods provided. We will have a contact form available as soon as we get it assigned to a contactable person.
+                                Thank you for visiting our website, please don't hesitate to reach out.
+                            </p>
+                        <% } %>
+                        <p class="lead mt-3">
+                            1234 Main St - Some City, NJ 12345
+                            <br>
+                            info@cosmicvibes.org
+                            <br>
+                            (555) 555-5555
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://puravidayourlife.com/wp-content/uploads/2023/06/Group-bespoke-Sessions-Image-1.jpg" class="d-block img-fluid max-image-size" alt="Wild Landscape"/>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn-az.allevents.in/events5/banners/ad4fbb7b64c29b1462dbf113636d19ae88d10a004bef5e968d24bc7317fe52d3-rimg-w1200-h675-dcf0f0ef-gmir.jpg?v=1713090688" class="d-block img-fluid max-image-size" alt="Camera"/>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://more-aware.com/wp-content/uploads/38-2048x1330.jpg" class="d-block img-fluid max-image-size" alt="Exotic Fruits"/>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</div>

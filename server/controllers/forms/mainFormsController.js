@@ -1,5 +1,6 @@
 const boardMemberData = require("../../models/OurBoard");
 const FaqData = require("../../models/FaqPost");
+const HomeIntroData = require("../../models/HomeIntro");
 
 const newBoardMemberPage = (req, res) => {
     res.render("newBoardMember", {
@@ -55,6 +56,32 @@ const deleteFaq = async (req, res) => {
     res.redirect("/");
 }
 
+const updateFaqData = async (req, res) => {
+    const faqDetails = await FaqData.findById(req.params.id);
+    faqDetails.question = req.body.question;
+    faqDetails.answer = req.body.answer;
+    await faqDetails.save();
+    res.redirect("/");
+}
+//////////////////////////////////////////////////////////
+// home intro
+const newHomeIntroPage = (req, res) => {
+    res.render("newHomeIntro", {
+        title: "New Home Intro"
+    })
+}
+
+const storeHomeIntro = async (req, res) => {
+    const homeIntro = new HomeIntroData(req.body);
+    await homeIntro.save();
+    res.redirect("/newHomeIntro");
+}
+
+const deleteHomeIntro = async (req, res) => {
+    await HomeIntroData.findByIdAndDelete(req.params.id);
+    res.redirect("/");
+}
+
 module.exports = {
     newBoardMemberPage,
     storeBoardMember,
@@ -63,5 +90,9 @@ module.exports = {
     postUpdateBoardMember,
     newFaqPage,
     storeFaqInfo,
-    deleteFaq
+    deleteFaq,
+    updateFaqData,
+    newHomeIntroPage,
+    storeHomeIntro,
+    deleteHomeIntro
 }

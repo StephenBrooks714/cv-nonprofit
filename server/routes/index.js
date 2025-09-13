@@ -33,6 +33,11 @@ router.post("/updateBoardMember/:id", auth, cache(2), auth, formsController.post
 router.get("/newFaq", auth, cache(2), formsController.newFaqPage);
 router.post("/store/faq", cache(2), auth, formsController.storeFaqInfo);
 router.get("/delete/faq/:id", cache(2), auth, formsController.deleteFaq);
+router.post("/update/faq/:id", cache(2), auth, formsController.updateFaqData)
+// home intro
+router.get("/newHomeIntro", auth, cache(2), formsController.newHomeIntroPage);
+router.post("/store/homeIntro", cache(2), auth, formsController.storeHomeIntro);
+router.get("/delete/homeIntro/:id", cache(2), auth, formsController.deleteHomeIntro);
 
 const contactFormController = require("../controllers/forms/contactPreferences");
 router.get("/newContact", auth, contactFormController.newContactPage);
