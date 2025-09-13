@@ -29,6 +29,10 @@ router.post("/store/boardMember", cache(2), auth, formsController.storeBoardMemb
 router.get("/deleteBoardMember/:id", auth, cache(2), auth, formsController.deleteBoardMember);
 router.get("/updateBoardMember/:id", auth, cache(2), auth, formsController.updateBoardMemberPage);
 router.post("/updateBoardMember/:id", auth, cache(2), auth, formsController.postUpdateBoardMember);
+// faq form actions
+router.get("/newFaq", auth, cache(2), formsController.newFaqPage);
+router.post("/store/faq", cache(2), auth, formsController.storeFaqInfo);
+router.get("/delete/faq/:id", cache(2), auth, formsController.deleteFaq);
 
 const contactFormController = require("../controllers/forms/contactPreferences");
 router.get("/newContact", auth, contactFormController.newContactPage);

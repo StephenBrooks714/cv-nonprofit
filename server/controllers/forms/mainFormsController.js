@@ -1,4 +1,5 @@
 const boardMemberData = require("../../models/OurBoard");
+const FaqData = require("../../models/FaqPost");
 
 const newBoardMemberPage = (req, res) => {
     res.render("newBoardMember", {
@@ -35,10 +36,32 @@ const postUpdateBoardMember = async (req, res) => {
     res.redirect("/boardMembers");
 }
 
+/////////////////////////////////////////////////////////
+// FAQ Section
+const newFaqPage = (req, res) => {
+    res.render("newFaq", {
+        title: "New FAQ"
+    })
+}
+
+const storeFaqInfo = async (req, res) => {
+    const faqDetails = new FaqData(req.body);
+    await faqDetails.save();
+    res.redirect("/newFaq");
+}
+
+const deleteFaq = async (req, res) => {
+    await FaqData.findByIdAndDelete(req.params.id);
+    res.redirect("/");
+}
+
 module.exports = {
     newBoardMemberPage,
     storeBoardMember,
     deleteBoardMember,
     updateBoardMemberPage,
-    postUpdateBoardMember
+    postUpdateBoardMember,
+    newFaqPage,
+    storeFaqInfo,
+    deleteFaq
 }

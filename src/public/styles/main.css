@@ -282,6 +282,11 @@
   }
 }
 
+.really-bold {
+  font-weight: 1700px !important;
+  text-shadow: 5px 7px 6px #add8e6 !important;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

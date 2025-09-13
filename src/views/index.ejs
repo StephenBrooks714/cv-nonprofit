@@ -106,34 +106,26 @@
         <div class="row mb-7">
             <div class="col-12">
                 <hr>
-                <div class="mb-4">
-                    <style>
-                        .grayscale {
-                            filter: grayscale(100%);
-                        }
-                    </style>
-                    <h3 class="fw-bold text-black-50 mb-2">
-                        Our Fact & Answer Area
-                    </h3>
-                    <p class="lead mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi asperiores at atque distinctio dolores dolorum eum excepturi exercitationem incidunt ipsa molestias officiis, quam ratione, rerum sed soluta, ullam.
-                    </p>
-                    <h3 class="fw-bold text-black-50 mb-2">
-                        Our Fact & Answer Area
-                    </h3>
-                    <p class="lead mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi asperiores at atque distinctio dolores dolorum eum excepturi exercitationem incidunt ipsa molestias officiis, quam ratione, rerum sed soluta, ullam.
-                    </p>
-                    <h3 class="fw-bold text-black-50 mb-2">
-                        Our Fact & Answer Area
-                    </h3>
-                    <p class="lead mb-4">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium animi asperiores at atque distinctio dolores dolorum eum excepturi exercitationem incidunt ipsa molestias officiis, quam ratione, rerum sed soluta, ullam.
-                    </p>
-                </div>
+                    <%  for(i=0; i < faqs.length; i++) { %>
+                        <div class="mb-4">
+                            <style>
+                                .grayscale {
+                                    filter: grayscale(100%);
+                                }
+                            </style>
+                            <h3 class="really-bold mb-2">
+                                <%= faqs[i].question %>
+                            </h3>
+                            <p class="text-muted mb-4">
+                                <%= faqs[i].answer %>
+                            </p>
+                            <hr style="border-color: #000; border-width: 5px; border-style: solid; margin: 1rem 0; width: 60%;">
+                        </div>
+                    <% } %>
                 <hr>
             </div>
         </div>
+
         <!-- Section: Design Block -->
         <section class="mb-7">
             <style>
