@@ -18,4 +18,7 @@
   <url>
     <loc>http://localhost:8080/events</loc>
   </url>
+  <url>
+    <loc>http://localhost:8080/newTestimony</loc>
+  </url>
 </urlset>

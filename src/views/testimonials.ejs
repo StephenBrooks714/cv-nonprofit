@@ -13,12 +13,16 @@
         <% if(review != "") { %>
             <div class="row justify-content-center mb-7">
                 <div class="col-lg-10 text-center">
-                    <h1 class="mb-5"><span class="fw-bold">Public</span> Testimonials</h1>
+                    <h1 class="mb-3"><span class="fw-bold">Public</span> Testimonials</h1>
+                    <p class="lead mb-5">
+                        We use your testimonials to show the world how much we value our community. The below testimonials are from our clients that shared their experience.
+                        Together we can make an experience that no one can forget.
+                    </p>
                     <!-- Section: Design Block -->
                     <!-- Section: Design Block -->
                     <div class="row">
                         <% for(i=0; i < review.length; i++) { %>
-                            <div class="col-md-4 mb-5 mb-md-0">
+                            <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
                                 <div class="d-flex justify-content-center align-items-center text-center mb-4">
                                     <% if(review[i].image != "") { %>
                                         <img

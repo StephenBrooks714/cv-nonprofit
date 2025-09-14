@@ -2,15 +2,19 @@
     <div class="col-lg-7 mb-lg-0 mb-4">
         <h2 class="fw-bold text-black display-5 mb-3">Our Service To You</h2>
         <p class="lead mb-3">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate deleniti hic, inventore mollitia perspiciatis quasi saepe similique tempora temporibus totam vel. At blanditiis dicta earum inventore laudantium. Corporis, numquam?
+            We are energy healing service to you workers. Energy meaning coming from your spirit and your light.
+            Not everybody has the same amount of lightness from within, but we want to focus on the energy properties to heal your mind and body.
+            You'd be surprised how much your body can heal itself when you have the right energy flow. Let's get started with a session today to see how we can help.
         </p>
-        <button type="button" class="btn btn-dark" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
+        <a href="/testimonials" class="btn btn-info me-2">Read Reviews</a>
+
+        <button type="button" class="btn btn-outline-dark" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#exampleModal">
             Get In Touch
         </button>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Contact Us</h5>
@@ -18,7 +22,7 @@
                     </div>
                     <div class="modal-body">
                         <% if(contactData != "") { %>
-                            <p class="fw-bold h1 mb-1 text-success">Contact Us</p>
+                            <p class="fw-bold h1 mb-1 text-primary">Contact Us</p>
                             <form action="/send/form"
                                   method="POST"
                                   enctype="multipart/form-data">
@@ -35,7 +39,7 @@
                                     <textarea class="form-control" required id="message" name="message" rows="3" placeholder="Message"></textarea>
                                 </div>
                                 <div id="message"></div>
-                                <button data-mdb-ripple-init type="submit" class="btn btn-outline-success mb-4">Send Your Message</button>
+                                <button data-mdb-ripple-init type="submit" class="btn btn-outline-primary mb-4">Send Your Message</button>
                             </form>
                         <% } else { %>
                             <p class="lead">
@@ -44,11 +48,11 @@
                             </p>
                         <% } %>
                         <p class="lead mt-3">
-                            1234 Main St - Some City, NJ 12345
+                            Remote Office - Oakland, NJ 12345
                             <br>
                             info@cosmicvibes.org
                             <br>
-                            (555) 555-5555
+                            (201) 406-2152
                         </p>
                     </div>
                     <div class="modal-footer">
