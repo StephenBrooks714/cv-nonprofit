@@ -7,7 +7,6 @@ const mainController = require("../controllers/mainPageController");
 router.get("/", cache(2), mainController.homePage);
 router.get("/boardMembers", cache(2), mainController.boardMembersPage);
 router.get("/ourReach", cache(2), mainController.ourReachPage);
-router.get("/testimonials", cache(2), mainController.testimonialsPage);
 router.get("/events", cache(2), mainController.eventsPage);
 
 const userActionController = require("../controllers/users/index");
@@ -38,6 +37,12 @@ router.post("/update/faq/:id", cache(2), auth, formsController.updateFaqData)
 router.get("/newHomeIntro", auth, cache(2), formsController.newHomeIntroPage);
 router.post("/store/homeIntro", cache(2), auth, formsController.storeHomeIntro);
 router.get("/delete/homeIntro/:id", cache(2), auth, formsController.deleteHomeIntro);
+
+const reviewMainController = require("../controllers/forms/testimonyController");
+router.get("/newTestimony", cache(2), reviewMainController.newReviewPage);
+router.post("/store/testimony", cache(2), reviewMainController.storeReview);
+router.get("/delete/testimony/:id", cache(2), auth, reviewMainController.deleteReview);
+router.get("/testimonials", cache(2), reviewMainController.reviewPage);
 
 const contactFormController = require("../controllers/forms/contactPreferences");
 router.get("/newContact", auth, contactFormController.newContactPage);

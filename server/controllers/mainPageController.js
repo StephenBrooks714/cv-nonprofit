@@ -30,12 +30,6 @@ const ourReachPage = (req, res) => {
     })
 }
 
-const testimonialsPage = (req, res) => {
-    res.render("testimonials", {
-        title: "Nonprofit business - Cosmic Vibes"
-    })
-}
-
 const eventsPage = (req, res) => {
     res.render("events", {
         title: "Nonprofit business - Cosmic Vibes"
@@ -46,6 +40,5 @@ module.exports = {
     homePage,
     boardMembersPage,
     ourReachPage,
-    testimonialsPage,
     eventsPage
 }
