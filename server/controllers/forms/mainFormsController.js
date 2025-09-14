@@ -48,12 +48,12 @@ const newFaqPage = (req, res) => {
 const storeFaqInfo = async (req, res) => {
     const faqDetails = new FaqData(req.body);
     await faqDetails.save();
-    res.redirect("/newFaq");
+    res.redirect("/#facts");
 }
 
 const deleteFaq = async (req, res) => {
     await FaqData.findByIdAndDelete(req.params.id);
-    res.redirect("/");
+    res.redirect("/newFaq");
 }
 
 const updateFaqData = async (req, res) => {
@@ -61,7 +61,7 @@ const updateFaqData = async (req, res) => {
     faqDetails.question = req.body.question;
     faqDetails.answer = req.body.answer;
     await faqDetails.save();
-    res.redirect("/");
+    res.redirect("/#facts");
 }
 //////////////////////////////////////////////////////////
 // home intro
